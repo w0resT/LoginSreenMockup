@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  LoginScreen
-//
-//  Created by Mikhail on 11.11.2024.
-//
-
 import UIKit
 
 @main
