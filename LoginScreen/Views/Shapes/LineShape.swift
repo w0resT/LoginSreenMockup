@@ -2,12 +2,12 @@ import UIKit
 
 class LineShape: CAShapeLayer, ShapeLayerProtocol {
     // MARK: - Initializers
-    required init(size: CGSize, fillColor: CGColor, lineWidth: CGFloat = 10) {
+    required init(rect: CGRect, color: CGColor, fillColor: CGColor?, lineWidth: CGFloat = 10) {
         super.init()
         
-        self.path = getPath(size: size).cgPath
+        self.path = getPath(rect: rect).cgPath
         self.lineWidth = lineWidth
-        self.strokeColor = fillColor
+        self.strokeColor = color
     }
     
     required init?(coder: NSCoder) {
@@ -15,10 +15,10 @@ class LineShape: CAShapeLayer, ShapeLayerProtocol {
     }
     
     // MARK: - Private Methods
-    private func getPath(size: CGSize) -> UIBezierPath {
+    private func getPath(rect: CGRect) -> UIBezierPath {
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: size.width, y: size.height))
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
         return path
     }
 }

@@ -1,7 +1,7 @@
 import CoreGraphics
 
 protocol ShapeLayerProtocol {
-    init(size: CGSize, fillColor: CGColor, lineWidth: CGFloat)
+    init(rect: CGRect, color: CGColor, fillColor: CGColor?, lineWidth: CGFloat)
 }
 
 extension ShapeLayerProtocol {

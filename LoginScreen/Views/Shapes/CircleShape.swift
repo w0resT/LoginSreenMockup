@@ -2,13 +2,13 @@ import UIKit
 
 class CircleShape: CAShapeLayer, ShapeLayerProtocol {
     // MARK: - Initializers
-    required init(size: CGSize, fillColor: CGColor, lineWidth: CGFloat = 10) {
+    required init(rect: CGRect, color: CGColor, fillColor: CGColor?, lineWidth: CGFloat = 10) {
         super.init()
         
-        self.path = getPath(size: size).cgPath
+        self.path = getPath(rect: rect).cgPath
         self.lineWidth = lineWidth
-        self.strokeColor = fillColor
-        self.fillColor = nil
+        self.strokeColor = color
+        self.fillColor = fillColor
     }
     
     required init?(coder: NSCoder) {
@@ -16,9 +16,9 @@ class CircleShape: CAShapeLayer, ShapeLayerProtocol {
     }
     
     // MARK: - Private Methods
-    private func getPath(size: CGSize) -> UIBezierPath {
-        let radius = ([size.width, size.height].min() ?? 0) / 2
-        let center = CGPoint(x: size.width / 2, y: size.height / 2)
+    private func getPath(rect: CGRect) -> UIBezierPath {
+        let radius = ([rect.width, rect.height].min() ?? 0) / 2
+        let center = CGPoint(x: rect.minX + rect.width / 2, y: rect.minY + rect.height / 2)
         
         let path = UIBezierPath()
         path.addArc(withCenter: center, radius: radius, startAngle: 0, endAngle: .pi * 2, clockwise: true)

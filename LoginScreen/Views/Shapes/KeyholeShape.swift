@@ -2,13 +2,13 @@ import UIKit
 
 class KeyholeShape: CAShapeLayer, ShapeLayerProtocol {
     // MARK: - Initializers
-    required init(size: CGSize, fillColor: CGColor, lineWidth: CGFloat = 10) {
+    required init(rect: CGRect, color: CGColor, fillColor: CGColor?, lineWidth: CGFloat = 10) {
         super.init()
         
-        self.path = getPath(size: size, lineWidth: lineWidth).cgPath
+        self.path = getPath(rect: rect, lineWidth: lineWidth).cgPath
         self.lineWidth = lineWidth
-        self.strokeColor = fillColor
-        self.fillColor = nil
+        self.strokeColor = color
+        self.fillColor = fillColor
     }
     
     required init?(coder: NSCoder) {
@@ -16,14 +16,14 @@ class KeyholeShape: CAShapeLayer, ShapeLayerProtocol {
     }
     
     // MARK: - Private Methods
-    private func getPath(size: CGSize, lineWidth: CGFloat) -> UIBezierPath {
+    private func getPath(rect: CGRect, lineWidth: CGFloat) -> UIBezierPath {
         let path = UIBezierPath()
         
         // Размер круга = 1/2 общей ширины
-        let circleSize = CGSize(width: size.width / 2, height: size.width / 2)
-        let diameter = ([circleSize.width, circleSize.height].min() ?? 0)
+        let circleSize = CGSize(width: rect.width / 2, height: rect.width / 2)
+        let diameter = circleSize.width
         let radius = diameter / 2
-        let circleCenter = CGPoint(x: size.width / 2, y: circleSize.height / 2)
+        let circleCenter = CGPoint(x: rect.minX + rect.width / 2, y: rect.minY + circleSize.height / 2)
         let margin = lineWidth / 2
 
         // Круг
@@ -31,10 +31,10 @@ class KeyholeShape: CAShapeLayer, ShapeLayerProtocol {
         path.close()
         
         // Ключ
-        path.move(to: CGPoint(x: circleCenter.x, y: diameter + margin))
-        path.addLine(to: CGPoint(x: size.width, y: size.height))
-        path.addLine(to: CGPoint(x: 0, y: size.height))
-        path.addLine(to: CGPoint(x: circleCenter.x, y: diameter + margin))
+        path.move(to: CGPoint(x: circleCenter.x, y: rect.minY + diameter + margin))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: circleCenter.x, y: rect.minY + diameter + margin))
 
         return path
     }
