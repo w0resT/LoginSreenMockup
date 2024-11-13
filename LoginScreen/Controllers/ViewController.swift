@@ -139,7 +139,8 @@ private extension ViewController {
         emailField = manager.getTextField(placeholder: NSLocalizedString("email-placeholder", comment: ""),
                                           maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         passField = manager.getTextField(placeholder: NSLocalizedString("password-placeholder", comment: ""),
-                                         maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
+                                         maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner],
+                                         isSecureTextEntry: true)
         
         view.addSubview(textFieldStack)
         

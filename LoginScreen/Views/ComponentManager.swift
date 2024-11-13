@@ -34,7 +34,7 @@ final class ComponentManager {
             field.layer.borderColor = Colors.gray.cgColor
             field.autocapitalizationType = .none
             field.autocorrectionType = .no
-            field.isSecureTextEntry = true
+            field.isSecureTextEntry = isSecureTextEntry
             field.translatesAutoresizingMaskIntoConstraints = false
             field.heightAnchor.constraint(equalToConstant: 50).isActive = true
             return field
