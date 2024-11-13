@@ -3,12 +3,12 @@ import UIKit
 struct ShapeColors {
     static let primaryClr = UIColor(hex: "#7668dd").cgColor
     static let secondaryClr = UIColor(hex: "#e0daf8").cgColor
+    static let gradientClr = ["#18069a", "#8271f0"]
 }
 
-class BackgroundView: UIView {
+final class BackgroundView: UIView {
     
     // MARK: - Private Properties
-    private let gradientColors: [String] = ["#2a14cc", "#8271f0"]
     private let factory = ShapeLayerFactory()
     
     // MARK: - Initializers
@@ -51,7 +51,7 @@ private extension BackgroundView {
                                  rect: rect,
                                  color: UIColor.black.cgColor,
                                  fillColor: UIColor.black.cgColor) as! CAShapeLayer
-        let gradient = getGradient(colors: self.gradientColors, frame: frame)
+        let gradient = getGradient(colors: ShapeColors.gradientClr, frame: frame)
         gradient.mask = circle
         
         self.layer.insertSublayer(gradient, at: 1)

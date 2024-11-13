@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148960D92CE3F38D00093CA6 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 148960D62CE3F38D00093CA6 /* Montserrat-Regular.ttf */; };
+		148960DA2CE3F38D00093CA6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 148960D72CE3F38D00093CA6 /* Montserrat-Bold.ttf */; };
+		148960DB2CE3F38D00093CA6 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 148960D82CE3F38D00093CA6 /* Montserrat-SemiBold.ttf */; };
+		148960DD2CE3F66A00093CA6 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148960DC2CE3F66A00093CA6 /* UILabel+Ext.swift */; };
+		148960DF2CE4102700093CA6 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148960DE2CE4102700093CA6 /* Appearance.swift */; };
+		148960E32CE4346D00093CA6 /* ComponentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148960E22CE4346D00093CA6 /* ComponentManager.swift */; };
+		148960E62CE43E2600093CA6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 148960E82CE43E2600093CA6 /* Localizable.strings */; };
 		14973E1F2CE38DBE006CE848 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14973E1E2CE38DBE006CE848 /* BackgroundView.swift */; };
 		14BF22342CE29C130086B2AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF22332CE29C130086B2AF /* AppDelegate.swift */; };
 		14BF22362CE29C130086B2AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF22352CE29C130086B2AF /* SceneDelegate.swift */; };
@@ -23,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		148960D62CE3F38D00093CA6 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../../fonts/Montserrat/static/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		148960D72CE3F38D00093CA6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../../../fonts/Montserrat/static/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		148960D82CE3F38D00093CA6 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../../../../fonts/Montserrat/static/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		148960DC2CE3F66A00093CA6 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		148960DE2CE4102700093CA6 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		148960E22CE4346D00093CA6 /* ComponentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentManager.swift; sourceTree = "<group>"; };
+		148960E72CE43E2600093CA6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		14973E1E2CE38DBE006CE848 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		14BF22302CE29C130086B2AF /* LoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BF22332CE29C130086B2AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +65,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		148960D52CE3F37D00093CA6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				148960D72CE3F38D00093CA6 /* Montserrat-Bold.ttf */,
+				148960D62CE3F38D00093CA6 /* Montserrat-Regular.ttf */,
+				148960D82CE3F38D00093CA6 /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		14BF22272CE29C130086B2AF = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				14E4E0BE2CE3A31800A569DE /* Extensions */,
-				14BF22572CE2C3190086B2AF /* Assets */,
+				14BF22572CE2C3190086B2AF /* Resources */,
 				14BF22492CE29FD50086B2AF /* Controllers */,
 				14BF22482CE29FC10086B2AF /* Views */,
 				14BF22472CE29E8C0086B2AF /* Helpers */,
@@ -97,6 +121,7 @@
 				14BF224C2CE2AB2F0086B2AF /* Shapes */,
 				14BF224A2CE2A72B0086B2AF /* ShapeLayerProtocol.swift */,
 				14973E1E2CE38DBE006CE848 /* BackgroundView.swift */,
+				148960E22CE4346D00093CA6 /* ComponentManager.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,18 +153,22 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		14BF22572CE2C3190086B2AF /* Assets */ = {
+		14BF22572CE2C3190086B2AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				148960D52CE3F37D00093CA6 /* Fonts */,
+				148960DE2CE4102700093CA6 /* Appearance.swift */,
 				14BF223C2CE29C140086B2AF /* Assets.xcassets */,
+				148960E82CE43E2600093CA6 /* Localizable.strings */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		14E4E0BE2CE3A31800A569DE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				14E4E0BF2CE3A33E00A569DE /* UIColor+Ext.swift */,
+				148960DC2CE3F66A00093CA6 /* UILabel+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,8 +231,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148960DA2CE3F38D00093CA6 /* Montserrat-Bold.ttf in Resources */,
+				148960E62CE43E2600093CA6 /* Localizable.strings in Resources */,
+				148960D92CE3F38D00093CA6 /* Montserrat-Regular.ttf in Resources */,
 				14BF22402CE29C140086B2AF /* LaunchScreen.storyboard in Resources */,
 				14BF223D2CE29C140086B2AF /* Assets.xcassets in Resources */,
+				148960DB2CE3F38D00093CA6 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,12 +251,15 @@
 				14BF22382CE29C130086B2AF /* ViewController.swift in Sources */,
 				14BF224E2CE2AB590086B2AF /* KeyShape.swift in Sources */,
 				14BF22342CE29C130086B2AF /* AppDelegate.swift in Sources */,
+				148960DF2CE4102700093CA6 /* Appearance.swift in Sources */,
 				14E4E0C02CE3A33E00A569DE /* UIColor+Ext.swift in Sources */,
 				14BF22502CE2AB790086B2AF /* CircleShape.swift in Sources */,
 				14BF22362CE29C130086B2AF /* SceneDelegate.swift in Sources */,
 				14BF224B2CE2A72B0086B2AF /* ShapeLayerProtocol.swift in Sources */,
+				148960E32CE4346D00093CA6 /* ComponentManager.swift in Sources */,
 				14BF22522CE2AB870086B2AF /* LineShape.swift in Sources */,
 				14E4E0C22CE3CD9F00A569DE /* ShapeLayerFactory.swift in Sources */,
+				148960DD2CE3F66A00093CA6 /* UILabel+Ext.swift in Sources */,
 				14BF22542CE2ABC80086B2AF /* KeyholeShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +267,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		148960E82CE43E2600093CA6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				148960E72CE43E2600093CA6 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		14BF223E2CE29C140086B2AF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,6 +1,6 @@
 import UIKit
 
-class KeyholeShape: CAShapeLayer, ShapeLayerProtocol {
+final class KeyholeShape: CAShapeLayer, ShapeLayerProtocol {
     // MARK: - Initializers
     required init(rect: CGRect, color: CGColor, fillColor: CGColor?, lineWidth: CGFloat = 10) {
         super.init()

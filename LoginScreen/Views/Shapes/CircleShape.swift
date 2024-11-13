@@ -1,6 +1,6 @@
 import UIKit
 
-class CircleShape: CAShapeLayer, ShapeLayerProtocol {
+final class CircleShape: CAShapeLayer, ShapeLayerProtocol {
     // MARK: - Initializers
     required init(rect: CGRect, color: CGColor, fillColor: CGColor?, lineWidth: CGFloat = 10) {
         super.init()

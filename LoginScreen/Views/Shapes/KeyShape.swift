@@ -1,6 +1,6 @@
 import UIKit
 
-class KeyShape: CAShapeLayer, ShapeLayerProtocol {
+final class KeyShape: CAShapeLayer, ShapeLayerProtocol {
     // MARK: - Initializers
     required init(rect: CGRect, color: CGColor, fillColor: CGColor?, lineWidth: CGFloat = 10) {
         super.init()
