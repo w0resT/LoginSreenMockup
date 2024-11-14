@@ -49,4 +49,26 @@ final class ComponentManager {
         
         return field
     }
+    
+    func getLabel(text: String,
+                  font: UIFont? = Fonts.bold,
+                  textColor: UIColor? = Colors.white,
+                  textAlignment: NSTextAlignment = .left,
+                  spacing: CGFloat = 0,
+                  numberOfLines: Int = 1) -> UILabel {
+        let label = UILabel()
+        label.font = font
+        label.textColor = textColor
+        label.textAlignment = textAlignment
+        label.numberOfLines = numberOfLines
+        
+        if spacing != 0 {
+            label.addCharactersSpacing(spacing: spacing, text: text)
+        } else {
+            label.text = text
+        }
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
 }
